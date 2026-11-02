@@ -42,5 +42,5 @@ sentiment-app/
 
 | Rôle | Nom | Identifiant GitHub | Travail de la semaine 1 |
 | --- | --- | --- | --- |
-| Membre A | [Nom 1] | [@login] | |
+| Membre A | Ilyass Belayachi | @IlyassBelayachi |Cadrage (3 fiches), dépôt GitHub, environnement |
 | Membre B | [Nom 2] | [@login] | |
