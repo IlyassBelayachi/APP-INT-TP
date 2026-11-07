@@ -40,7 +40,6 @@ sentiment-app/
 
 ## Membres du binôme
 
-| Rôle | Nom | Identifiant GitHub | Travail de la semaine 1 |
+| Rôle | Nom | Identifiant GitHub | Travail des semaines 1 à 3 |
 | --- | --- | --- | --- |
-| Membre A | Ilyass Belayachi | @IlyassBelayachi |Cadrage (3 fiches), dépôt GitHub, environnement |
-| Membre B | Hicham Drief | @hichamdrief | Relecture des fiches, installation et vérification sur un clone frais, commit README |
+| Auteur (travail individuel) | Ilyass Belayachi | @IlyassBelayachi | Cadrage, dépôt, environnement, modèle TF-IDF et évaluation |
