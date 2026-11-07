@@ -43,4 +43,4 @@ sentiment-app/
 | Rôle | Nom | Identifiant GitHub | Travail de la semaine 1 |
 | --- | --- | --- | --- |
 | Membre A | Ilyass Belayachi | @IlyassBelayachi |Cadrage (3 fiches), dépôt GitHub, environnement |
-| Membre B | [Nom 2] | [@login] | |
+| Membre B | Hicham Drief | @hichamdrief | Relecture des fiches, installation et vérification sur un clone frais, commit README |
