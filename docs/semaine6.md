@@ -1,0 +1,11 @@
+## 1. Pourquoi le modèle n'est-il pas dans la roue ? Comment le paquet le trouve-t-il ?
+
+Le modèle est un fichier de données, pas du code : il a son propre cycle de vie, on peut le réentraîner (`python src/train.py`) sans republier le paquet. La roue que j'ai construite ne contient que `api`, `sentiment_app` et `ui` (T39), ni `models`, ni `data`, ni `tests`. Le paquet le trouve grâce à la variable d'environnement `SENTIMENT_MODELE` ; à défaut, `chemin_modele()` cherche `models/sentiment.joblib` à côté du paquet. Dans l'environnement neuf, sans la variable, la commande a répondu « modèle introuvable » avec le chemin cherché (`...\roue-tp6\Lib\site-packages\models\sentiment.joblib`).
+
+## 2. Qu'est-ce qui a changé dans api/model.py quand predict() est entré dans le paquet, et pourquoi est-ce mieux ?
+
+J'ai supprimé `RACINE = ...`, `sys.path.insert(0, ...)` et les deux `from predict import ...` avec leur `# noqa: E402`, et je les ai remplacés par `from sentiment_app.predict import charger_modele` et `from sentiment_app.predict import predict as _predict`. Avant, l'API ne marchait que si le dépôt était présent, avec son dossier `src/` à un endroit précis. Maintenant elle importe un paquet installé, comme n'importe quelle bibliothèque : elle marche depuis la roue, hors du dépôt, et le code n'a plus à modifier le chemin de Python. `Select-String` ne trouve plus `sys.path` dans `api/` (T37).
+
+## 3. La roue installée hors du dépôt : qu'a-t-il fallu lui fournir, et pourquoi scikit-learn est-il épinglé dans pyproject.toml ?
+
+Il a fallu lui fournir le modèle, par `SENTIMENT_MODELE`, puisqu'il n'est pas dans la roue. Ses dépendances (FastAPI, uvicorn, Pydantic, scikit-learn, joblib) sont, elles, installées par `pip` à partir des métadonnées de la roue. scikit-learn est épinglé en 1.5 parce qu'un modèle sauvegardé avec joblib ne se relit qu'avec la version de scikit-learn qui l'a produit : avec une autre version, le chargement peut échouer. L'épingle garantit que le poste, la CI et la roue utilisent la même version que celle de l'entraînement (ici 1.5.2).
