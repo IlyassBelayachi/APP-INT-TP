@@ -1,0 +1,21 @@
+text,attendu,difficulte,erreur_connue
+"Livraison express, le colis est arrivé en parfait état",POSITIVE,,
+"Produit défectueux dès la première utilisation, très déçu",NEGATIVE,,
+"Très bon rapport qualité prix, je suis ravi de mon achat",POSITIVE,,
+"Le colis est arrivé avec trois semaines de retard",NEGATIVE,,
+"Je n'ai aucun regret, rien à reprocher à ce produit",POSITIVE,négation,
+"Qualité médiocre, ça s'est cassé au bout de deux jours",NEGATIVE,,
+"Le produit correspond exactement à la description, merci",POSITIVE,,
+"Génial, trois jours d'attente pour un colis vide, quel service formidable",NEGATIVE,ironie,
+"Service client réactif, mon problème a été réglé en une journée",POSITIVE,,
+"Service client injoignable, personne ne répond à mes messages",NEGATIVE,,
+"Un peu cher, mais la qualité est excellente et je rachèterais sans hésiter",POSITIVE,mitigé,
+"Article non conforme à la photo, je demande un remboursement",NEGATIVE,,"négation non comprise : le modèle lit « conforme » sans le préfixe « non »"
+"Matériel solide et bien fini, je le recommande à tout le monde",POSITIVE,,
+"Je ne suis pas satisfait, la qualité n'est pas au rendez-vous",NEGATIVE,négation,"négation non comprise : le modèle lit « satisfait » et « qualité » sans le « ne … pas »"
+"Prix correct et livraison dans les délais, tout est parfait",POSITIVE,,
+"Emballage déchiré et produit abîmé, une honte",NEGATIVE,,
+"Un film magnifique, des acteurs justes et une fin qui m'a ému",POSITIVE,autre domaine,
+"Restaurant décevant, plats froids, serveur désagréable et addition salée",NEGATIVE,autre domaine,
+"Super expérience, je commanderai de nouveau sans hésiter",POSITIVE,,
+"Une vraie arnaque, je ne recommande à personne",NEGATIVE,,"négation non comprise : le modèle lit « recommande » sans le « ne … personne »"
